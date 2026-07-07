@@ -1,20 +1,15 @@
-name = "disk-api"
+name = "file_api"
 main = "worker.js"
 compatibility_date = "2026-07-01"
-# 关键：开启node兼容，支持mysql2/promise
 compatibility_flags = ["nodejs_compat"]
 
-# 你的Hyperdrive绑定（引导库）
+# 全局唯一通用Hyperdrive，所有MySQL共用这条代理
 [[hyperdrive]]
-binding = "INDEX_DB"
-id = "此处填你CF后台Hyperdrive ID"
+binding = "HYPERDRIVE"
+# 替换成你自己复制的真实UUID
+id = "7d7f1fb08aaa4703a351120a6d6ab8cb"
 
-# 所有5M子库Hyperdrive在这里追加
-[[hyperdrive]]
-binding = "DB_1"
-id = "子库1 Hyperdrive ID"
-
-# 基础固定环境变量
+# 固定基础环境变量
 [vars]
 INDEX_DB_HOST = "sql.wsfdb.cn"
 INDEX_DB_PORT = "3306"
