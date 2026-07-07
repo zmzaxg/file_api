@@ -1,15 +1,13 @@
-name = "file_api"
+name = "file-api"
 main = "worker.js"
 compatibility_date = "2026-07-01"
 compatibility_flags = ["nodejs_compat"]
 
-# 全局唯一通用Hyperdrive，所有MySQL共用这条代理
+# 和部署日志里绑定名保持一致：HYPERDRIVE
 [[hyperdrive]]
 binding = "HYPERDRIVE"
-# 替换成你自己复制的真实UUID
 id = "7d7f1fb08aaa4703a351120a6d6ab8cb"
 
-# 固定基础环境变量
 [vars]
 INDEX_DB_HOST = "sql.wsfdb.cn"
 INDEX_DB_PORT = "3306"
