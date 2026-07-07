@@ -3,7 +3,6 @@ main = "worker.js"
 compatibility_date = "2026-07-01"
 compatibility_flags = ["nodejs_compat"]
 
-# 和部署日志里绑定名保持一致：HYPERDRIVE
 [[hyperdrive]]
 binding = "HYPERDRIVE"
 id = "7d7f1fb08aaa4703a351120a6d6ab8cb"
