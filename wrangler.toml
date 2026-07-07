@@ -1,28 +1,22 @@
-name = "disk-mysql-api"
+name = "disk-api"
 main = "worker.js"
 compatibility_date = "2026-07-01"
-compatibility_flags = ["nodejs_compat"] # 关键！开启Node兼容，支持mysql2
+# 关键：开启node兼容，支持mysql2/promise
+compatibility_flags = ["nodejs_compat"]
 
-# 引导库 Hyperdrive 绑定
+# 你的Hyperdrive绑定（引导库）
 [[hyperdrive]]
 binding = "INDEX_DB"
-id = "你的Hyperdrive引导库ID"
+id = "此处填你CF后台Hyperdrive ID"
 
-# 每一个5M子库都新增一条，示例db_id=1、2
+# 所有5M子库Hyperdrive在这里追加
 [[hyperdrive]]
 binding = "DB_1"
 id = "子库1 Hyperdrive ID"
 
-[[hyperdrive]]
-binding = "DB_2"
-id = "子库2 Hyperdrive ID"
-
-# 环境密钥（后台填写，不要明文写文件）
+# 基础固定环境变量
 [vars]
 INDEX_DB_HOST = "sql.wsfdb.cn"
 INDEX_DB_PORT = "3306"
 INDEX_DB_USER = "zmzaxgIndex"
 INDEX_DB_NAME = "zmzaxgIndex"
-
-# 密钥类变量，后续在GitHub Actions/Cloudflare后台单独配置，不写死
-# JWT_SECRET、INDEX_DB_PASS 放到加密密钥，禁止提交到代码仓库
